@@ -519,4 +519,10 @@
 > - iterable 객체의 각 요소에 대해 인덱스와 함께 반환하는 내장 함수
 
 > **enumerate 예시**
+> ```python
+> fruits = ['apple', 'banana', 'cherry']
 >
+>   for index, fruit in enumerate(fruits):
+>     print(f'인덱스 {index}: {fruit}')
+> ```
+---
