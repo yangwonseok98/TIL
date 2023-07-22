@@ -129,7 +129,11 @@
 >     ```
 >     
 >     - **반복 가능한 객체 (iterable)**
->         - 반복문에서 순회할 수 있는 객체 <- (내부에 '__iter__'함수가 존재 하느냐?)
+>         - 반복문에서 순회할 수 있는 객체 ← (내부에 ‘__ iter __’ 함수가 존재하는 객체 )
+>             
+>             ```python
+>             print('__iter__' in dir({자료형}))
+>             ```
 >             
 >             (시퀀스 객체 뿐만 아니라 dict, set 등도 포함)
 >             
@@ -519,10 +523,14 @@
 > - iterable 객체의 각 요소에 대해 인덱스와 함께 반환하는 내장 함수
 
 > **enumerate 예시**
+> 
+> 
 > ```python
 > fruits = ['apple', 'banana', 'cherry']
->
->   for index, fruit in enumerate(fruits):
+> 
+> for index, fruit in enumerate(fruits):
 >     print(f'인덱스 {index}: {fruit}')
 > ```
+> 
+
 ---
