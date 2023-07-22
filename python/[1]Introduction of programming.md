@@ -70,9 +70,9 @@
 > 
 > - 컴퓨터는 기계어로 소통하기 때문에 사람이 기계어를 직접 작성하기 어려움
 
-> **파이썬 인터프리터**를 사용하는 2가지 방법
+> 파이썬 인터프리터를 사용하는 2가지 방법
 > 
-> 1. shell 이라는 프로그램으로 **한 번에 한 명령어 씩 입력해서 실행** [python -i] /[ctrl+c] or [exit()]
+> 1. shell 이라는 프로그램으로 한 번에 한 명령어 씩 입력해서 실행 [python -i] /[ctrl+c] or [exit()]
 > 2. 확장자가 .py인 파일에 작성된 파이썬 프로그램을 실행 [python {FileName}]
 
 ---
@@ -266,7 +266,7 @@
 > - 문자와 밑줄(_)을 사용하여 함수, 변수, 속성의 이름을 작성
 > - 함수 정의나 클래스 정의 등의 블록 사이에는 빈 줄을 추가
 > - …
-> - https://peps.python.org/pep-0008/ : pep8
+> - [https://peps.python.org/pep-0008/](https://peps.python.org/pep-0008/) : pep8
 
 ---
 
@@ -275,7 +275,7 @@
 > **Python Tutor**
 > 
 > - 파이썬 프로그램이 어떻게 실행되는지 도와주는 시각화 도우미
-> - https://pythontutor.com/
+> - [https://pythontutor.com/](https://pythontutor.com/)
 
 ---
 
