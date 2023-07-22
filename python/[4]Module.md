@@ -139,7 +139,7 @@
 > 파이썬 표준 라이브러리 (Python Standard Library)
 > 
 > - 파이썬 언어와 함께 제공되는 다양한 모듈과 패키지의 모음
-> - https://docs.python.org/ko/3/library/index.html
+> - [https://docs.python.org/ko/3/library/index.html](https://docs.python.org/ko/3/library/index.html)
 
 > 패키지 (Package)
 > 
@@ -204,7 +204,7 @@
 > 
 > - 외부 패키지들을 설치하도록 도와주는 파이썬의 패키지 관리 시스템
 > - PyPI(Python Package Index)에 저장된 외부 패키지들을 설치
-> - https://pypi.org/
+> - [https://pypi.org/](https://pypi.org/)
 
 > **패키지 설치**
 > 
@@ -237,4 +237,5 @@
 > 
 > - 모듈들의 이름공간은 구분하여 충돌을 방지
 > - 모듈들을 효율적으로 관리하고 재사용할 수 있도록 돕는 역할
+
 ---
