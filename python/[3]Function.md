@@ -89,7 +89,7 @@
 > 
 > ```python
 > def make_sum(pram1, pram2):
-> return pram1+pram2
+>   return pram1+pram2
 > ```
 > 
 > - **INPUT x (:parameter)** 에 대하여 **OUTPUT f(x) (:return value)**를 반환함
