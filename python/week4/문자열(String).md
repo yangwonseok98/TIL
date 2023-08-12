@@ -37,7 +37,8 @@
 > 
 > - 출력 가능 아스키 문자(32 ~ 126)
 >     
->     ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled.png)
+>     ![image](https://github.com/yangwonseok98/TIL/assets/132911926/50dc34b3-8a62-45b3-a744-79803803e7a1)
+
 >     
 > 
 > - 확장 아스키는 표준 문자 이외의 악센트 문자, 도형 문자, 특수 문자, 특수 기호 등 부가적인 문자를 128개 추가할 수 있게 하는 부호이다.
@@ -47,7 +48,8 @@
 > 
 > - 확장 아스키 예
 >     
->     ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled%201.png)
+>     ![image](https://github.com/yangwonseok98/TIL/assets/132911926/77192592-e5a2-47a4-95c5-0c293589aff9)
+
 >     
 > 
 > - 오늘날 대부분의 컴퓨터는 문자를 읽고 쓰는데 ASCII형식을 사용한다.
@@ -63,7 +65,8 @@
 > 
 > - 유니코드의 일부
 >     
->     ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled%202.png)
+>     ![image](https://github.com/yangwonseok98/TIL/assets/132911926/0d7f5851-54f6-4a20-b540-231ef657547e)
+
 >     
 > 
 > - 유니코드도 다시 Character Set으로 분류된다.
@@ -110,7 +113,8 @@
 > 
 > - 그림에서 보이듯, java.lang.String 클래스에는 기본적인 객체 메타 데이터 외에도 네 가지 필드들이 포함되어 있는데, hash값(hash), 문자열의 길이(count), 문자열 데이터의 시작점(offset), 그리고 실제 문자열 배열에 대한 참조(value)이다.
 >     
->     ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled%203.png)
+>     ![image](https://github.com/yangwonseok98/TIL/assets/132911926/cdc5456f-60c9-4d14-9a54-e6509b85e8a2)
+
 >     
 
 > **C언어에서 문자열 처리**
@@ -444,11 +448,12 @@
 >     - 텍스트에서 abcdabc까지는 매치되고, e에서 실패한 상황 패턴의 맨 앞의 abc와 실패 직전의 abc는 동일함을 이용할 수 있다.
 >     - 실패한 텍스트 문자와 P[4]를 비교한다.
 >         
->         ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled%204.png)
+>         ![image](https://github.com/yangwonseok98/TIL/assets/132911926/f1b37866-d366-42e7-bb89-477052a2579a)
+>
 >         
 >     - 매칭이 실패했을 때 돌아갈 곳을 계산한다.
 >         
->         ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled%205.png)
+>         ![image](https://github.com/yangwonseok98/TIL/assets/132911926/20a93d80-a25c-409b-84b4-67863c1cb3ab)
 >         
 
 > **보이어-무어 알고리즘**
@@ -457,15 +462,15 @@
 > - 대부분의 상용 소프트웨어에서 채택하고 있는 알고리즘
 > - 보이어-무어 알고리즘은 패턴에 오른쪽 끝에 있는 문자가 불일치 하고 이 문자가 패턴 내에 존재하지 않는 경우, 이동거리는 무려 패턴이 길이 만큼이 된다.
 >     
->     ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled%206.png)
+>     ![image](https://github.com/yangwonseok98/TIL/assets/132911926/0dffcaf3-e7f4-4acf-9959-027ca4b381d1)
 >     
 > - 오른쪽 끝에 있는 문자가 불일치 하고 이 문자가 패턴 내에 존재할 경우
 >     
->     ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled%207.png)
+>     ![image](https://github.com/yangwonseok98/TIL/assets/132911926/1485ab7b-c380-46f5-9280-7f74f7b78647)
 >     
 > - 보이어-무어 알고리즘을 이용한 예
 >     
->     ![Untitled](%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AF(String)%2074519bd6624742d5b3a308f0ba042fdf/Untitled%208.png)
+>     ![image](https://github.com/yangwonseok98/TIL/assets/132911926/a74e7746-d66b-4366-84da-55f2c0c56178)
 >     
 >     - rithm 문자열의 skip 배열
 >         
