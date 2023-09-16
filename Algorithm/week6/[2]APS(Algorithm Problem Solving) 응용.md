@@ -127,13 +127,13 @@
 >     - 단순화된 함수 $n^2$에 임의의 상수 $c$를 곱한 $cn^2$이 $n$이 증가함에 따라 $f(n)$의 상한이 된다. (단, $c > 0$)
 >     - 단순히 **“실행시간이 $n^2$에 비례”** 하는 알고리즘이라고 말함.
 >         
->         ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled.png)
+>         ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled.png)
 >         
 > 
 > - 복잡도 $f(n)$과 O-표기를 그래프로 나타내고 있다.
 > - n이 증가함에 따라 $O(g(n))$이 점근적 상한이라는 것 (즉, $g(n)$이 $n_0$보다 큰 모든 $n$에 대해서 항상 $f(n)$보다 크다는 것)을 보여 준다.
 >     
->     ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%201.png)
+>     ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%201.png)
 >     
 > 
 > - $**\Omega$(Big-Omega)표기**
@@ -149,7 +149,7 @@
 >     - $f(n) = 2n^2+8n+3 = O(n^2) = \Omega(n^2)$이므로, $f(n) = \Theta(n^2)$이다.
 >     - “$f(n)$은 $n$이 증가함에 따라 $**n^2$과 동일한 증가율을 가진다**”라는 의미이다.
 >         
->         ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%202.png)
+>         ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%202.png)
 >         
 > 
 > - 자주 사용하는 O-표기
@@ -164,7 +164,7 @@
 > - 왜 효율적인 알고리즘이 필요한가
 >     - 10억 개의 숫자를 정렬하는 데 PC에서 $O(n^2)$알고리즘은 300여 년이 걸리는 반면에 $O(n \log n)$알고리즘은 5분 만에 정렬한다.
 >         
->         ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%203.png)
+>         ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%203.png)
 >         
 >     - 효율적인 알고리즘은 슈퍼컴퓨터보다 더 큰 가치가 있다.
 >     - 값 비싼 H/W의 기술 개발보다 효율적인 알고리즘 개발이 훨씬 더 경제적이다.
@@ -298,9 +298,9 @@
 > 
 > - 비트 연산자
 >     
->     ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%204.png)
+>     ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%204.png)
 >     
->     ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%205.png)
+>     ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%205.png)
 >     
 > - 1 << n
 >     - $2^n$의 값을 갖는다.
@@ -375,7 +375,7 @@
 >         - 리틀 엔디안(Little-endia)
 >             - 작은 단위가 앞에 나옴. 대다수 데스크탑 컴퓨터.
 >                 
->                 ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%206.png)
+>                 ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%206.png)
 >                 
 >         
 > - 엔디안 확인 코드
@@ -511,7 +511,7 @@
 > - 10진수 → 타 진수로 변환
 >     - 원하는 타 진법의 수로 나눈 뒤 나머지를 거꾸로 읽는다.
 >         
->         ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%207.png)
+>         ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%207.png)
 >         
 > - 타 진수 → 10진수로 변환
 >     - 예)  $(135)_{8} = 1*8^2 + 3*8^1 + 5*8^0 = 93_{10}$
@@ -520,7 +520,7 @@
 > 
 > - 2진수, 8진수, 16진수 간 변환
 >     
->     ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%208.png)
+>     ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%208.png)
 >     
 > - 컴퓨터에서의 음의 정수 표현 방법
 >     - 1의 보수 : 부화와 절대값으로 표현된 값을 부호 비트를 제외한 나머지 비트들을 0은 1로, 1은 0으로 변환한다.
@@ -581,13 +581,13 @@
 > - 실수의 표현
 >     - 소수점 이하 4자리를 10진수로 나타내보면
 >         
->         ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%209.png)
+>         ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%209.png)
 >         
 >     
 > - 2진 실수를 10진수로 변환하는 방법
 >     - 예) 1001.0011
 >         
->         ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2010.png)
+>         ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2010.png)
 >         
 > 
 > - 실수의 표현
@@ -602,7 +602,7 @@
 >     - 단정도 실수 (32 비트)
 >     - 배정도 실수 (64 비트)
 >         
->         ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2011.png)
+>         ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2011.png)
 >         
 >         - 가수부(mantissa) : 실수의 유효 자릿수들을 부호화된 고정 소수점으로 표현한 것
 >         - 지수부(exponent) : 실제 소수점의 위치를 지수 승으로 표현한 것
@@ -614,7 +614,7 @@
 >         - 소수점 이하 만을 가수 부분에 저장
 >         - 지수 부분은 시프트 한 자릿수 만큼 증가 또는 감소
 >             
->             ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2012.png)
+>             ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2012.png)
 >             
 > - 단정도 실수의 지수 부분을 만드는 방법
 >     - 지수부에는 8비트가 배정(256개의 상태를 나타낼 수 있음)
@@ -624,11 +624,11 @@
 >         
 > - 단정도 표현에서 지수부 익세스 표현
 >     
->     ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2013.png)
+>     ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2013.png)
 >     
 >     - 예 : 1001.0011을 단정도 실수로 표현한 예
 >         
->         ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2014.png)
+>         ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2014.png)
 >         
 > 
 > - 컴퓨터는 실수를 근사적으로 표현한다
@@ -650,7 +650,7 @@
 > 
 > - 16진수 문자로 이루어진 1차 배열이 주어질 때 암호 비트 패턴을 찾아 차례대로 출력하시오. 암호는 연속되어 있다.
 >     
->     ![Untitled](APS(Algorithm%20Problem%20Solving)%20%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2015.png)
+>     ![Untitled](APS(Algorithm%20Problem%20Solving)%20응용%20e6456a5ab5284b1bb41823fc29f75995/Untitled%2015.png)
 >     
 >     - input : 0DEC
 >         
