@@ -66,7 +66,7 @@
 >         - 카드 문제
 >             - 사실 : 모든 카드의 한쪽에는 알파벳이, 다른 쪽에는 숫자가 써 있음
 >                 
->                 ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled.png)
+>                 ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled.png)
 >                 
 >             
 >             - 주장 : 만약 한쪽이 D 이면 반대쪽은 3
@@ -83,7 +83,7 @@
 >             - 규칙 : 20세 이하인 사람은 맥주를 마실 수 없음
 >             - 나이 혹은 마시고 있는 것을 표시한 다음 4명 중 확인이 필요한 사람은 몇 명이고 누구인가?
 >                 
->                 ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%201.png)
+>                 ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%201.png)
 >                 
 >             - 답 : [17세]와 [맥주]
 >         
@@ -233,32 +233,32 @@
 >     - 참이나 거짓을 표현.
 >     - T, F 또는 1, 0
 >         
->         ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%202.png)
+>         ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%202.png)
 >         
 > - 연산(결합)
 >     - 부정 : NOT
 >         - $p$가 명제일 때, 명제의 진릿값이 반대
 >         - ~$p$ 또는 ㄱ$p$로 표기 (not $p$ 또는 $p$의 부정으로 읽음)
 >             
->             ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%203.png)
+>             ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%203.png)
 >             
 >     - 논리곱 : AND
 >         - $p$, $q$가 명제일 때, $p$, $q$ 모두 참일 때만 참이 되는 명제.
 >         - $p\wedge q$ ($p$ and $q$, $p$ 그리고 $q$)
 >             
->             ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%204.png)
+>             ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%204.png)
 >             
 >     - 논리합 : OR
 >         - $p$, $q$가 명제일 때, $p$, $q$ 모두 거짓일 때만 거짓이 되는 명제.
 >         - $p\vee q$ ($p$ or $q$, $p$ 또는 $q$)
 >             
->             ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%205.png)
+>             ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%205.png)
 >             
 >     - 배타적 논리합 : XOR
 >         - $p$, $q$가 명제일 때, $p$, $q$ 중 하나만 참일 때만 참이 되는 명제.
 >         - $p\oplus q$ ($p$ xor $q$)
 >             
->             ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%206.png)
+>             ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%206.png)
 >             
 > 
 > - [합성]
@@ -271,13 +271,13 @@
 >         - $p$, $q$ 가 명제일 때, 명제 $p$가 조건(또는 원인), $q$가 결론(또는 결과)로 제시되는 명제.
 >         - $p$  → $q$ ($p$ 이면 $q$이다.)
 >             
->             ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%207.png)
+>             ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%207.png)
 >             
 >     - 쌍방 조건 명제 :
 >         - $p$, $q$ 가 명제일 때, 명제 $p$와 $q$가 모두 조건이면서 결론인 명제.
 >         - $p$  ↔ $q$ ($p$ 면 $q$고, $q$ 면 $p$다.)
 >             
->             ![Untitled](Computational%20Thinking%20-%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%20%E1%84%82%E1%85%A9%E1%86%AB%E1%84%85%E1%85%B5%20&%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%208.png)
+>             ![Untitled](Computational%20Thinking%20-%20기초%20논리%20%26%20수학%20-%2012644fe8df284319a3ec05bb4aad6df5/Untitled%208.png)
 >             
 > 
 > - 조건 명제의 역, 이, 대우
