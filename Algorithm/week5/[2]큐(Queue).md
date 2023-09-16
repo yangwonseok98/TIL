@@ -24,7 +24,7 @@
 > 
 > - 큐의 선입선출 구조
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled.png)
 >     
 > - 큐의 기본 연산
 >     - 삽입 : enQueue
@@ -48,31 +48,31 @@
 > 
 > 1. 공백 큐 생성 : createQueue();
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%201.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%201.png)
 >     
 > 2. 원소 A 삽입 : enQueue(A);
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%202.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%202.png)
 >     
 > 3. 원소 B 삽입 : enQueue(B);
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%203.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%203.png)
 >     
 > 4. 원소 반환/삭제 : deQueue();
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%204.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%204.png)
 >     
 > 5. 원소 C 삽입 : enQueue(C);
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%205.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%205.png)
 >     
 > 6. 원소 반환/삭제 : deQueue();
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%206.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%206.png)
 >     
 > 7. 원소 반환/삭제 : deQueue();
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%207.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%207.png)
 >     
 
 ---
@@ -312,13 +312,13 @@
 > - 잘못된 포화상태 인식
 >     - 선형 큐를 이용하여 원소의 삽입과 삭제를 계속할 경우, 배열의 앞 부분에 활용할 수 있는 공간이 있음에도 불구하고, rear = n -1 인 상태 즉, 포화 상태로 인식하여 더 이상의 삽입을 수행하지 않게 됨
 >         
->         ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%208.png)
+>         ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%208.png)
 >         
 > - 해결 방법 1
 >     - 매 연산이 이루어질 때마다 저장된 원소들을 배열의 앞 부분으로 모두 이동 시킴
 >     - 원소 이동에 많은 시간이 소요되어 큐의 효율성이 급격히 떨어짐
 >         
->         ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%209.png)
+>         ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%209.png)
 >         
 > - 해결 방법 2
 >     - 1차원 배열을 사용하되, 논리적으로는 배열의 처음과 끝이 연결되어 원형 형태의 큐를 이룬다고 가정하고 사용
@@ -346,27 +346,27 @@
 > 
 > 1. create Queue
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2010.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2010.png)
 >     
 > 2. enQueue(A);
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2011.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2011.png)
 >     
 > 3. enQueue(B);
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2012.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2012.png)
 >     
 > 4. deQueue();
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2013.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2013.png)
 >     
 > 5. enQueue(C);
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2014.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2014.png)
 >     
 > 6. enQueue(D);
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2015.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2015.png)
 >     
 
 > **원형 큐의 구현**
@@ -496,7 +496,7 @@
 >     - 삽입 : enQueue
 >     - 삭제 : deQueue
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2016.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2016.png)
 >     
 
 > **배열을 이용한 우선순위 큐**
@@ -526,7 +526,7 @@
 > 
 > - 키보드 버퍼는 아래와 같이 수행된다.
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2017.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2017.png)
 >     
 
 ---
@@ -634,7 +634,7 @@
 > 
 > - BFS는 예제 그래프를 아래와 같은 순서로 탐색함
 >     
->     ![Untitled](%E1%84%8F%E1%85%B2(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2018.png)
+>     ![Untitled](큐(Queue)%2073c94fc8f5cd416bbb9e68903489cf6f/Untitled%2018.png)
 >     
 
 > **BFS 알고리즘**
