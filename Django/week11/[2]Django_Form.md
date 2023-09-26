@@ -167,6 +167,7 @@
 >
 > - 새로운 update view 함수
 >   - 기존 edit과 update view 함수 결합
+>     
 >       ![img25](Django_Form_img/img25.PNG)
 >
 > - 기존 edit 관련 코드 수정
