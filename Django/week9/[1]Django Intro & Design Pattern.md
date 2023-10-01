@@ -54,16 +54,10 @@
 > 
 > - 2022 기준 가장 인기있는 백엔드 프레임워크
 > (Stack overflow, github, hackerrank 통계 기반)
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled.png)
->     
 > 
 > - 검증된 웹 프레임워크
 > 대규모 서비스에서도 안정적인 서비스 제공
 >     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%201.png)
->     
-
 ---
 
 ### 클라이언트와 서버
@@ -74,21 +68,18 @@
 >     - 우리가 컴퓨터 혹은 모바일 기기로 웹 페이지를 보게 될 때까지 무슨 일이 일어날까?
 > 
 > - ‘클라이언트 - 서버’ 구조
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%202.png)
->     
 > 
-> - Client(클라이언트)
->     - 서비스를 요청하는 주체
->     (웹 사용자의 인터넷이 연결된 장치, 웹 브라우저)
+>   - Client(클라이언트)
+>       - 서비스를 요청하는 주체
+>       (웹 사용자의 인터넷이 연결된 장치, 웹 브라우저)
 > 
-> - Server(서버)
->     - 클라이언트의 요청에 응답하는 주체
->     (웹 페이지, 앱을 저장하는 컴퓨터)
+>   - Server(서버)
+>       - 클라이언트의 요청에 응답하는 주체
+>       (웹 페이지, 앱을 저장하는 컴퓨터)
 > 
 > - 우리가 웹 페이지를 보게 되는 과정
 >     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%203.png)
+>     
 >     
 >     <aside>
 >     💡 1. 웹 브라우저(클라이언트)에서 ‘google.com’을 입력
@@ -136,30 +127,18 @@
 >         A와 B 프로젝트의 패키지 충돌을 피하기 위해 각각 **독립적인 개발 환경**이 필요하다.
 >         
 >         </aside>
->         
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%204.png)
 >     
 > - 가상 환경 venv 생성
 >     
->     `$ python -m venv venv`
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%205.png)
->     
+>     `$ python -m venv venv` 
 > 
 > - 가상 환경 활성화
 >     
 >     `$ source venv/Scripts/activate`
 >     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%206.png)
->     
 > - 환경에 설치된 패키지 목록 확인
 >     
 >     `$ pip list`
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%207.png)
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%208.png)
 >     
 > - 패키지 목록이 필요한 시나리오
 >     
@@ -185,13 +164,8 @@
 >     
 >     </aside>
 >     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%209.png)
->     
 >     - 예시
 >         - requests 설치 후 설치되는 패키지 목록 변화 (1개만 설치되는 것이 아님)
->         
->         ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2010.png)
->         
 >     
 >     - 의존성 패키지 관리의 중요성
 >         - 개발 환경에서는 각각의 프로젝트가 사용하는 패키지와 그 버전을 정확히 관리하는 것이 중요
@@ -203,44 +177,51 @@
 >         
 >         `$ pip freeze > requirements.txt`
 >         
->         ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2011.png)
->         
 > - Django 프로젝트 생성 전 루틴
 >     
->     <aside>
->     💡 1. 가상 환경 생성
->     `$ python -m venv venv`
+>     
+>     1. 가상 환경 생성
+>
+>           `$ python -m venv venv`
 >     
 >     2. 가상 환경 활성화
->     `$ source venv/Scripts/activate`
+>
+>           `$ source venv/Scripts/activate`
 >     
 >     3. Django 설치
->     `$ pip install Django`
+>
+>           `$ pip install Django`
 >     
 >     4. 의존성 파일 생성 (패키지 설치 시마다 진행)
->     `$ pip freeze > requirements.txt`
+>           
+>           `$ pip freeze > requirements.txt`
 >     
->     </aside>
 >     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2012.png)
->     
+>
+>   ```shell
+>   # 1. 가상환경(venv) 생성
+>   $ python -m venv
+>
+>   # 2. 가상환경 활성화
+>   $ source venv/Scripts/activate
+>
+>   # 3. Django 설치
+>   $ pip install Django
+>
+>   # 4. 의존성 파일 생성
+>   $ pip freeze > requirements.txt
+>   ```
 > 
 > - Django 프로젝트 생성
-> `$ django-admin startproject firstpjt .`
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2013.png)
+>
+>   `$ django-admin startproject firstpjt .`
 >     
 > - Django 서버 실행
-> $ python [manage.py](http://manage.py) runserver
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2014.png)
->     
 > 
+>   `$ python [manage.py](http://manage.py) runserver`
+>     
 > - 서버 확인
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2015.png)
->     
-
+>
 ---
 
 ### 참고
@@ -309,8 +290,6 @@
 > 
 > - 프로젝트와 앱
 >     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2016.png)
->     
 >     - 만약 커뮤니티 카페를 만든다면
 >         - 프로젝트
 >             - 카페 (전체 설정 담당)
@@ -322,19 +301,26 @@
 >     2. 앱 등록
 > 
 > - 앱 생성
-> `$ python [manage.py](http://manage.py) startapp articles`
+>
+>   `$ python manage.py startapp articles`
 >     - 앱의 이름은 ‘복수형’으로 지정하는 것을 권장
->         
->         ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2017.png)
->         
-> 
+>
 > - 앱 등록
 >     - 반드시 앱을 생성한 후에 등록해야 함
 >     - 등록 후 생성은 불가능
 >         
->         ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2018.png)
->         
-
+>       ```python
+>       # settings.py
+>       INSTALLED_APPS = [
+>           'articles', # 앱 등록
+>           'django.contrib.admin',
+>           'django.contrib.auth',
+>           'django.contrib.contenttypes',
+>           'django.contrib.sessions',
+>           'django.contrib.messages',
+>           'django.contrib.staticfiles',
+>       ]
+>       ```
 ---
 
 ### Django 디자인 패턴
@@ -355,24 +341,30 @@
 >     - Django에서 어플리케이션을 구조화하는 패턴
 >     (기존 MVC 패턴과 동일하나 명칭을 다르게 정의한 것)
 >         
->         ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2019.png)
->         
-> 
 > - 프로젝트 구조
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2020.png)
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2021.png)
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2022.png)
->     
+>   - setting.py
+>       - 프로젝트의 모든 설정을 관리
+>   - urls.py
+>       - URL과 이에 해당하는 적절한 views를 연결
+>   - __init__.py
+>       - 해당 폴더를 패키지로 인식하도록 설정
+>   - asgi.py
+>       - 비동기식 웹 서버와의 연결 관련 설정
+>   - wsgi,py
+>       - 웹 서버와의 연결 관련 설정
+>   - manage.py
+>       - Django 프로젝트와 다양한 방법으로 상호작용 하는 커맨드라인 유틸리티
+>    
 > - 앱 구조
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2023.png)
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2024.png)
->     
-
+>   - admin.py
+>       - 관리자용 페이지 설정
+>   - models.py
+>       - DB와 관련된 Model을 정의
+>       - MTV 패턴의 M
+>   - views.py
+>       - HTTP 요청을 처리하고 해당 요청에 대한 응답을 반환
+(url, model, template과 연계)
+>       - MTV 패턴의 V
 ---
 
 ### 요청과 응답
@@ -380,19 +372,33 @@
 > **요청과 응답**
 > 
 > - Django와 요청 & 응답
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2025.png)
->     
+>   - urls.py를 통하여 요청을 받음
+>   - views.py를 통해 응답을 제공  
 > 
 > - URLS
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2026.png)
->     
+>     ```python
+>    # project/urls.py 
+>    from django.contrib import admin
+>    from django.urls import path
+>    from articles import views # articles 패키지에 views  모듈을 가져오는 것
+>
+>    urlpatterns = [
+>        path('admin/', admin.site.urls),
+>        path('articles/', views.index),  # url 경로는 반드시 "/"(slash)로 끝나야 함
+>    ]
+>   ```
 >     - [http://127.0.0.1:8000/articles/](http://127.0.0.1:8000/articles/) 로 요청이 왔을 때 views 모듈의 index 함수를 호출
 > 
 > - View
 >     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2027.png)
+>   ```python
+>   # articles/views.py
+>   from django.shortcuts import render
+>   
+>   # Create your views here.
+>   def index(request):
+>       return render(request, 'articles/index.html')
+>   ```
 >     
 >     - 특정 경로에 있는 template과 request 객체를 결합해
 >     응답 객체를 반환하는 index view 함수 정의
@@ -404,12 +410,12 @@
 >     2. templates 폴더 안에 articles 폴더 생성
 >     3. articles 폴더 안에 템플릿 파일 생성
 >         
->         ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2028.png)
+>         ![Untitled](Django_Intro&Design_Pattern_img%20/Untitled%2028.png)
 >         
 >     
 >     - Django에서 template을 인식하는 경로 규칙
 >         
->         ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2029.png)
+>         ![Untitled](Django_Intro&Design_Pattern_img%20/Untitled%2029.png)
 >         
 > 
 > - 페이지 확인
@@ -419,7 +425,7 @@
 > - 데이터 흐름에 따른 코드 작성
 >     - URLs → View → Template
 >         
->         ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2030.png)
+>         ![Untitled](Django_Intro&Design_Pattern_img%20/Untitled%2030.png)
 >         
 
 ---
@@ -430,32 +436,30 @@
 > 
 > - MTV 디자인 패턴 정리
 >     
->     <aside>
->     💡 **Model**
->     데이터와 관련된 로직을 관리
->     응용프로그램의 데이터 구조를 정의하고 데이터베이스의 기록을 관리
+>      **Model**
+>
+>     - 데이터와 관련된 로직을 관리
+>     - 응용프로그램의 데이터 구조를 정의하고 데이터베이스의 기록을 관리
 >     
 >     **Template**
->     레이아웃과 화면을 처리
->     화면상의 사용자 인터페이스 구조와 레이아웃을 정의
+>     - 레이아웃과 화면을 처리
+>     - 화면상의 사용자 인터페이스 구조와 레이아웃을 정의
 >     
 >     **View**
->     Model & Template 과 관련한 로직을 처리해서 응답을 반환
->     클라이언트의 요청에 대해 처리를 분기하는 역할
+>     - Model & Template 과 관련한 로직을 처리해서 응답을 반환
+>     - 클라이언트의 요청에 대해 처리를 분기하는 역할
 >     
 >     **View 예시**
->     데이터가 필요하다면 model에 접근해서 데이터를 가져오고,
->     가져온 데이터를 template로 보내 화면을 구성하고,
->     구성된 화면을 응답으로 만들어 클라이언트에게 반환
+>     - 데이터가 필요하다면 model에 접근해서 데이터를 가져오고,
+>     - 가져온 데이터를 template로 보내 화면을 구성하고,
+>     - 구성된 화면을 응답으로 만들어 클라이언트에게 반환
 >     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2031.png)
+>     ![Untitled](Django_Intro&Design_Pattern_img%20/Untitled%2031.png)
 >     
->     </aside>
 >     
 > - render 함수
 >     
->     <aside>
->     💡 주어진 템플릿을 주어진 컨텍스트 데이터와 결합하고 렌더링 된 텍스트와 함께 HttpResponse(응답) 객체를 반환하는 함수
+>      주어진 템플릿을 주어진 컨텍스트 데이터와 결합하고 렌더링 된 텍스트와 함께 HttpResponse(응답) 객체를 반환하는 함수
 >     
 >     1. request
 >         - 응답을 생성하는 데 사용되는 요청 객체
@@ -465,9 +469,9 @@
 >     
 >     3. context
 >         - 템플릿에서 사용할 데이터 (딕셔너리 타입으로 작성)
->     
->     ![Untitled](Django%20Intro%20&%20Design%20Pattern%20a46057a9d3a94318af5070b9a45c9f24/Untitled%2032.png)
->     
+>
+>           `render(request, template_name, context)`
+> 
 >     </aside>
 >     
 

@@ -18,7 +18,7 @@
 > 
 > - Model 을 통한 DB(데이터베이스) 관리
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled.png)
+>     ![Untitled](Django%20Model%20img/Untitled.png)
 >     
 > 
 > - Django Model
@@ -27,37 +27,41 @@
 > 
 > - model 클래스 작성
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%201.png)
+>   ```python
+>   # articles/models.py
+>   from django.db import models
+>   
+>   # Create your models here.
+>   class Article(models.Model):
+>       title = models.CharField(max_length=10)
+>       content = models.TextField()
+>   ```
 >     
 > - model 클래스 살펴보기
->     - 작성한 모델 클래스는 최종적으로 DB에 다음과 같은 테이블 구조를 만듦
->         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%202.png)
->         
->     
+>     - 작성한 모델 클래스는 최종적으로 DB에 테이블 구조를 만듦
 >     - `django.db.models` 모듈의 Model 이라는 부모 클래스를 상속 받음
 >     - Model은 model에 관련된 모든 코드가 이미 작성 되어있는 클래스
 >         - [https://github.com/django/django/blob/main/django/db/models/base.py#L459](https://github.com/django/django/blob/main/django/db/models/base.py#L459)
 >     - 개발자는 가장 중요한 테이블 구조를 어떻게 설계할 지에 대한 코드만 작성하도록 하기 위한 것 (프레임워크의 이점)
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%203.png)
->     
 >     - 클래스 변수 명
 >         - 테이블의 각 “필드(열) 이름”
->         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%204.png)
+>
+>         - `title`
+>         - `content`
 >         
 >     - model Field 클래스
 >         - 테이블 필드의 “데이터 타입”
 >         - [https://docs.djangoproject.com/en/4.2/ref/models/fields/](https://docs.djangoproject.com/en/4.2/ref/models/fields/)
 >         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%205.png)
+>         - `models.CharField()`
+>         - `models.TextField()`
 >         
 >     - model Field 클래스의 키워드 인자 (필드 옵션)
 >         - 테이블 필드의 “제약 조건” 관련 설정
 >         - [https://docs.djangoproject.com/en/4.2/ref/models/fields/#field-options](https://docs.djangoproject.com/en/4.2/ref/models/fields/#field-options)
 >         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%206.png)
+>         - `max_length = 10`
 >         
 > - 제약 조건
 >     - 데이터가 올바르게 저장되고 관리되도록 하기 위한 규칙
@@ -74,7 +78,7 @@
 > 
 > - Migrations 과정
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%207.png)
+>     ![Untitled](Django%20Model%20img/Untitled%207.png)
 >     
 > - Migrations 핵심 명렁어 2가지
 >     - `python [manage.py](http://manage.py) makemigrations`
@@ -85,7 +89,7 @@
 > - migrate 후 DB 내에 생성 된 테이블 확인
 >     - Article 모델 클래스로 만들어진 articles_article 테이블
 >         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%208.png)
+>         ![Untitled](Django%20Model%20img/Untitled%208.png)
 >         
 
 ---
@@ -96,35 +100,35 @@
 > 
 > - 이미 생성된 테이블에 필드를 추가해야 한다면?
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%209.png)
+>     ![Untitled](Django%20Model%20img/Untitled%209.png)
 >     
 > - 추가 모델 필드 작성
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2010.png)
+>     ![Untitled](Django%20Model%20img/Untitled%2010.png)
 >     
 >     - 이미 기존 테이블이 존재하기 때문에 필드를 추가 할 때 필드의 기본 값 설정이 필요
 >     - **1번은 현재 대화를 유지하면서 직접 기본 값을 입력하는 방법**
 >     - 2번은 현재 대화에서 나간 후 models.py에 기본 값 관련 설정을 하는 방법
 >         - `python [manage.py](http://manage.py) makemigrations`
 >         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2011.png)
+>         ![Untitled](Django%20Model%20img/Untitled%2011.png)
 >         
 >     - 추가하는 필드의 기본 값을 입력해야 하는 상황
 >     - 날짜 데이터이기 때문에 직접 입력하기 보다 Django가 제안하는 기본 값을 사용하는 것을 권장
 >     - 아무것도 입력하지 않고 enter를 누르면 Django가 제안하는 기본 값으로 설정 됨
 >         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2012.png)
+>         ![Untitled](Django%20Model%20img/Untitled%2012.png)
 >         
 >     - mirations 과정 종료 후 2번째 migration 파일이 생성됨을 확인
 >     - 이처럼 Django는 설계도를 쌓아가면서 추후 문제가 생겼을 시 복구하거나 되돌릴 수 있도록 함 (마치 ‘git commit’)
 >         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2013.png)
+>         ![Untitled](Django%20Model%20img/Untitled%2013.png)
 >         
 >     
 >     - migrate 후 테이블 필드 변화 확인
 >         - `python [manage.py](http://manage.py) migrate`
 >         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2014.png)
+>         ![Untitled](Django%20Model%20img/Untitled%2014.png)
 >         
 > - **model class에 변경사항(1)**이 생겼다면,
 > 반드시 **새로운 설계도를 생성(2)**하고,
@@ -177,25 +181,29 @@
 > 
 > - DB에 생성된 admin 계정 확인
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2015.png)
+>     ![Untitled](Django%20Model%20img/Untitled%2015.png)
 >     
 > - admin에 모델 클래스 등록
 >     - admin.py에 작성한 모델 클래스를 등록해야만 admin site에서 확인 가능
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2016.png)
+>       ```python
+>       from django.contrib import admin
+>       from .models import Article
+>       # Register your models here.
+>       admin.site.register(Article)
+>       ```
 >     
-> 
 > - admin site 로그인 후 등록된 모델 클래스 확인
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2017.png)
+>     ![Untitled](Django%20Model%20img/Untitled%2017.png)
 >     
 > - 데이터 생성, 수정, 삭제 테스트
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2018.png)
+>     ![Untitled](Django%20Model%20img/Untitled%2018.png)
 >     
 > - 테이블 확인
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2019.png)
+>     ![Untitled](Django%20Model%20img/Untitled%2019.png)
 >     
 
 ---
@@ -211,7 +219,7 @@
 >         - `__init__.py`
 >         - `migrations 폴더`
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2020.png)
+>     ![Untitled](Django%20Model%20img/Untitled%2020.png)
 >     
 > 
 > - Migrations 기타 명령어
@@ -226,11 +234,11 @@
 >     - Django 프로젝트가 동작하기 위해 미리 작성 되어있는 기
 >     본 내장 app들에 대한 migration 파일들이 함께 migrate 되기 때문
 >         
->         ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2021.png)
+>         ![Untitled](Django%20Model%20img/Untitled%2021.png)
 >         
 > - SQLite
 >     
->     ![Untitled](Django%20Model%20905236a0c04145b1927a159b4fa3ff0a/Untitled%2022.png)
+>     ![Untitled](Django%20Model%20img/Untitled%2022.png)
 >     
 >     - 데이터베이스 관리 시스템 중 하나이며Django의 기본 데이터베이스로 사용됨
 >     (파일로 존재하며 가볍고 호환성이 좋음)

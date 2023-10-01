@@ -26,7 +26,7 @@
 > 
 > - ORM의 역할
 >     
->     ![Untitled](Django%20ORM%2029297335330d4012900ad5c531e9da2f/Untitled.png)
+>     ![Untitled](Django%20ORM%20img/Untitled.png)
 >     
 
 ---
@@ -39,7 +39,7 @@
 >     - ORM에서 데이터를 검색, 필터링, 정렬 및 그룹화 하는데 사용하는 도구
 >     - API를 사용하여 SQL이 아닌 Python 코드로 데이터를 처리
 >     
->     ![Untitled](Django%20ORM%2029297335330d4012900ad5c531e9da2f/Untitled%201.png)
+>     ![Untitled](Django%20ORM%20img/Untitled%201.png)
 >     
 > - QuerySet API 구문
 >     - ex)
