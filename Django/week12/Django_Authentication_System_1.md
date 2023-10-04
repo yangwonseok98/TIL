@@ -246,7 +246,7 @@
 ## Logout
 - Logout
     - Session을 Delete하는 과정
-- logout(request)
+- `logout(request)`
     - 현재 요청에 대한 Session Data를 DB에서 삭제
     - 클라이언트의 쿠키에서도 Session Id를 삭제
 - 로그아웃 로직 작성
