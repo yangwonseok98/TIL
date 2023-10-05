@@ -356,7 +356,7 @@
     - 인증된 사용자에 대해서만 view 함수를 실행시키는 데코레이터
     - 비인증 사용자의 경우 `/accounts/login/` 주소로 `redirect` 시킴
 - `login_required` 적용하기
-    - 인증되 사용자만 게시글을 작성/수정/삭제 할 수 있도록 수정
+    - 인증된 사용자만 게시글을 작성/수정/삭제 할 수 있도록 수정
         ```python
         # articles/views.py
         from django.contrib.auth.decorators import login_required
