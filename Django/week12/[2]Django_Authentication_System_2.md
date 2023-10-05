@@ -49,17 +49,17 @@
     ```python
     # accounts/views.py
     def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request, request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('articles:index')
-    else:
-        form = UserCreationForm()
-    context = {
-        'form': form
-    }
-    return render(request,'accounts/signup.html',context)
+        if request.method == 'POST':
+            form = UserCreationForm(request, request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('articles:index')
+        else:
+            form = UserCreationForm()
+        context = {
+            'form': form
+        }
+        return render(request,'accounts/signup.html',context)
     ```
 - 회원 가입 로직 에러
     - 회원 가입 진행 후 에러 페이지 확인
@@ -97,17 +97,17 @@
     from .forms import CustomUserCreationForm
 
     def signup(request):
-    if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('articles:index')
-    else:
-        form = CustomUserCreationForm()
-    context = {
-        'form': form
-    }
-    return render(request,'accounts/signup.html',context)
+        if request.method == 'POST':
+            form = CustomUserCreationForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('articles:index')
+        else:
+            form = CustomUserCreationForm()
+        context = {
+            'form': form
+        }
+        return render(request,'accounts/signup.html',context)
     ```
 ---
 ## 회원 탈퇴
@@ -162,14 +162,14 @@
     from .forms import CustomUserCreationForm, CustomUserChangeForm
 
     def update(request):
-    if request.method == 'POST':
-        pass
-    else:
-        form = CustomUserChangeForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'accounts/update.html', context)
+        if request.method == 'POST':
+            pass
+        else:
+            form = CustomUserChangeForm()
+        context = {
+            'form': form
+        }
+        return render(request, 'accounts/update.html', context)
     ```
     ```html
     <!--accounts/update.html-->
@@ -202,17 +202,17 @@
     from .forms import CustomUserCreationForm, CustomUserChangeForm
 
     def update(request):
-    if request.method == 'POST':
-        form = CustomUserChangeForm(request.POST, instance=request.user)
-        if form.is_valid():
-            form.save()
-            return redirect('articles:index')
-    else:
-        form = CustomUserChangeForm(instance=request.user)
-    context = {
-        'form': form
-    }
-    return render(request, 'accounts/update.html', context)
+        if request.method == 'POST':
+            form = CustomUserChangeForm(request.POST, instance=request.user)
+            if form.is_valid():
+                form.save()
+                return redirect('articles:index')
+        else:
+            form = CustomUserChangeForm(instance=request.user)
+        context = {
+            'form': form
+        }
+        return render(request, 'accounts/update.html', context)
     ```
 ---
 ## 비밀번호 변경
