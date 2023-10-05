@@ -50,7 +50,7 @@
     # accounts/views.py
     def signup(request):
         if request.method == 'POST':
-            form = UserCreationForm(request, request.POST)
+            form = UserCreationForm(request.POST)
             if form.is_valid():
                 form.save()
                 return redirect('articles:index')
