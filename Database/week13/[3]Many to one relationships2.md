@@ -86,7 +86,7 @@
     		if form.is_valid():
     			article = form.save(commit=False)
     			article.user = request.user
-    			article.save()
+    			form.save()
     			return redirect('articles:detail', article.pk)
     	else:
     		...
