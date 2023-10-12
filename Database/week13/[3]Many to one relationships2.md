@@ -197,8 +197,8 @@
     	comment_form = CommentForm(request.POST)
     	if comment_form.is_valid():
     			comment = comment_form.save(commit=False)
-    			commit.article = article
-    			commit.user = request.user
+    			comment.article = article
+    			comment.user = request.user
     			comment_form.save()
     			return redirect('articles:detail', article.pk)
     ```
