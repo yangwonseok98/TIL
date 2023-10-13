@@ -153,7 +153,7 @@
                 
                 # 해당 요소를 반복하며
                 for g in g_list:
-                    # 요소 안애 LC20lb DKV0Md 클래스를 가진 특정 요소 선택
+                    # 요소 안에 LC20lb DKV0Md 클래스를 가진 특정 요소 선택
                     title = g.select_one(".LC20lb.DKV0Md")
                     # 요소가 존재 한다면
                     if title is not None:
