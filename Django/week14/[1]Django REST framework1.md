@@ -46,7 +46,7 @@
     - 궁극적으로 표현되는 데이터 결과물
 ---
 ## 자원의 식별
-### 1. URL [Uniform Resource Identifier](통합 자원 식별자)
+### 1. URI [Uniform Resource Identifier](통합 자원 식별자)
 - 인터넷에서 리소스(자원)를 식별하는 문자열
 - 가장 일반적인 URL는 웹 주소로 알려진 URL
 ### 2. URL [Uniform Resource Locator](통합 자원 위치)
