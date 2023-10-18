@@ -48,7 +48,7 @@
 ## 자원의 식별
 ### 1. URI [Uniform Resource Identifier](통합 자원 식별자)
 - 인터넷에서 리소스(자원)를 식별하는 문자열
-- 가장 일반적인 URL는 웹 주소로 알려진 URL
+- 가장 일반적인 URI는 웹 주소로 알려진 URL
 ### 2. URL [Uniform Resource Locator](통합 자원 위치)
     `http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewherInTheDoucument`
 - 웹에서 주어진 리소스의 주소
