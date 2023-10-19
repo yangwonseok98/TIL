@@ -332,8 +332,90 @@
     ```
 2. 적용 후
     ```python
-    article = get_object_or_404(Article)
-    comment = get_object_or_404(Comment)
+    article = get_list_or_404(Article)
+    comment = get_list_or_404(Comment)
+    ```
+3. 적용된 view 함수 전체
+    ```python
+    from rest_framework.response import Response
+    from rest_framework.decorators import api_view
+    from rest_framework import status
+    from .models import Article, Comment
+    from .serializers import ArticleListSerializer, ArticleSerializer, CommentSerializer
+    from django.shortcuts import get_object_or_404, get_list_or_404
+
+    @api_view(['GET', 'POST'])
+    def article_list(request):
+        if request.method == 'GET':
+            # articles = Article.objects.all()
+            articles = get_list_or_404(Article)
+            serializer = ArticleListSerializer(articles, many=True)
+            return Response(serializer.data)
+
+        elif request.method == 'POST':
+            serializer = ArticleSerializer(data=request.data)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+    @api_view(['GET', 'DELETE', 'PUT'])
+    def article_detail(request, article_pk):
+        # article = Article.objects.get(pk=article_pk)
+        article = get_object_or_404(Article, pk=article_pk)
+        if request.method == 'GET':
+            serializer = ArticleSerializer(article)
+            return Response(serializer.data)
+
+        elif request.method == 'DELETE':
+            article.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+        elif request.method == 'PUT':
+            serializer = ArticleSerializer(article, data=request.data, partial=True)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+                return Response(serializer.data)
+            # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+    @api_view(['GET'])
+    def comment_list(request):
+        # comments = Comment.objects.all()
+        comments = get_list_or_404(Comment)
+        serializer = CommentSerializer(comments, many=True)
+        return Response(serializer.data)
+
+
+    @api_view(['GET', 'DELETE', 'PUT'])
+    def comment_detail(request, comment_pk):
+        # comment = Comment.objects.get(pk=comment_pk)
+        comment = get_object_or_404(Comment, pk=comment_pk)
+        if request.method == 'GET':
+            serilizer = CommentSerializer(comment)
+            return Response(serilizer.data)
+
+        elif request.method == 'DELETE':
+            comment.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+        elif request.method == 'PUT':
+            serilizer = CommentSerializer(comment, data=request.data, partial=True)
+            if serilizer.is_valid(raise_exception=True):
+                serilizer.save()
+                return Response(serilizer.data)
+
+
+    @api_view(['POST'])
+    def comment_create(request, article_pk):
+        # article = Article.objects.get(pk = article_pk)
+        article = get_object_or_404(Article, pk=article_pk)
+        serializer = CommentSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save(article=article)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
     ```
 ### 6. 적용 전/후 비교
 - 존재하지 않는 게시글 조회시
@@ -342,11 +424,11 @@
 
 ### 7. 왜 사용해야 할까?
 ```
-클라이언트가 "서버에 오류가 발생하여 요청을 수행할 수 없다(500)"라는
+클라이언트가 "서버에 오류가 발생하여 요청을 수행할 수 없다(500)"
 
-원인이 정확하지 않은 에러를 제공하기 보다는,
+라는 원인이 정확하지 않은 에러를 제공하기 보다는,
 
-적절한 예외 처리를 통해 클라이언트에게 보다
+적절한 예외 처리를 통해 클라이언트에게 보다 
 
 정확한 에러 현황을 전달하는 것도 매우 중요한 개발 요소 중 하나이기 때문
 ```
