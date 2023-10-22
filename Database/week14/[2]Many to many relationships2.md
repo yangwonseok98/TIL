@@ -7,7 +7,8 @@
 3. Improve query
     - 쿼리 개선
 ---
-## 팔로우
+# 1. 팔로우
+---
 ### 1. 프로필
 1. 프로필 페이지
     - 각 회원의 개인 프로필 페이지에 팔로우 기능을 구현하기 위해 프로필 페이지를 먼저 구현
@@ -117,119 +118,121 @@
         ```
     6. 팔로우 버튼 클릭 후 팔로우 버튼 변화 및 중개 테이블 데이터 확인
 ---
-## 참고
-1. `.exists()`
-    - QuerySet에 결과가 포함되어 있으면 `True`를 반환하고 결과가 포함되어 있지 않으면 `False`를 반환
-    - 큰 QuerySet에 있는 특정 객체 검색에 유용
-2. `.exists()` 적용 예시
-    1. like 함수
-        - 적용 전
-            ```python
-            # articles/views.py
-            def likes(request, article_pk):
-                article = Article.objects.get(pk=article_pk)
-                if request.user in article.like_users.all():
-                    article.like_users.remove(request.user)
+# 참고
+### 1. `.exists()`
+- QuerySet에 결과가 포함되어 있으면 `True`를 반환하고 결과가 포함되어 있지 않으면 `False`를 반환
+- 큰 QuerySet에 있는 특정 객체 검색에 유용
+### 2. `.exists()` 적용 예시
+1. like 함수
+    - 적용 전
+        ```python
+        # articles/views.py
+        def likes(request, article_pk):
+            article = Article.objects.get(pk=article_pk)
+            if request.user in article.like_users.all():
+                article.like_users.remove(request.user)
+            else:
+                article.like_users.add(request.user)
+            return redirect('articles:index')
+        ```
+    - 적용 후
+        ```python
+        # articles/views.py
+        def likes(request, article_pk):
+            article = Article.objects.get(pk=article_pk)
+            if article.like_users.filter(pk=request.user.pk).exists():
+                article.like_users.remove(request.user)
+            else:
+                article.like_users.add(request.user)
+            return redirect('articles:index')
+        ```
+2. follow 함수
+    - 적용 전
+        ```python
+        # accounts/views.py
+        @login_required
+        def follow(request, user_pk):
+            User = get_user_model()
+            person = User.objects.get(pk=user_pk)
+            if person != request.user:
+                if request.user in person.followers.all():
+                    person.followers.remove(request.user)
                 else:
-                    article.like_users.add(request.user)
-                return redirect('articles:index')
-            ```
-        - 적용 후
-            ```python
-            # articles/views.py
-            def likes(request, article_pk):
-                article = Article.objects.get(pk=article_pk)
-                if article.like_users.filter(pk=request.user.pk).exists():
-                    article.like_users.remove(request.user)
+                    person.followers.add(request.user)
+            return redirect('accounts:profile', person.username)
+        ```
+    - 적용 후
+        ```python
+        # accounts/views.py
+        @login_required
+        def follow(request, user_pk):
+            User = get_user_model()
+            person = User.objects.get(pk=user_pk)
+            if person != request.user:
+                if person.followers.filter(pk=request.user.pk).exists():
+                    person.followers.remove(request.user)
                 else:
-                    article.like_users.add(request.user)
-                return redirect('articles:index')
-            ```
-    2. follow 함수
-        - 적용 전
-            ```python
-            # accounts/views.py
-            @login_required
-            def follow(request, user_pk):
-                User = get_user_model()
-                person = User.objects.get(pk=user_pk)
-                if person != request.user:
-                    if request.user in person.followers.all():
-                        person.followers.remove(request.user)
-                    else:
-                        person.followers.add(request.user)
-                return redirect('accounts:profile', person.username)
-            ```
-        - 적용 후
-            ```python
-            # accounts/views.py
-            @login_required
-            def follow(request, user_pk):
-                User = get_user_model()
-                person = User.objects.get(pk=user_pk)
-                if person != request.user:
-                    if person.followers.filter(pk=request.user.pk).exists():
-                        person.followers.remove(request.user)
-                    else:
-                        person.followers.add(request.user)
-                return redirect('accounts:profile', person.username)
-            ```
+                    person.followers.add(request.user)
+            return redirect('accounts:profile', person.username)
+        ```
+---
+# 2. Fixtures
 ---
 ## Fixtures
-1. Fixtures
-    - Django가 데이터베이스로 가져오는 방법을 알고 있는 데이터 모음
-        - 데이터베이스 구조에 맞추어 작성 되어있음
-2. 초기 데이터 제공
-    - Fixtures의 사용 목적
-3. 초기 데이터의 필요성
-    - 협업 하는 유저 A, B가 있다고 생각해 보기
-        1. A가 먼저 프로젝트를 작업 후 github에 push
-            - .gitignore 로 인해 DB는 업로드하지 않기 때문에 A가 생성한 데이터도 업로드X
-        2. B가 github에서 A가 push한 프로젝트를 pull(혹은 clone)
-            - 결과적으로 B는 DB가 없는 프로젝트를 받게 됨
-    - 이처럼 Django 프로젝트의 앱을 처음 설정할 때 동일하게 준비 된 데이터로 데이터베이스를 미리 채우는 것이 필요한 순간이 있음
-    - fixtures를 사용해 앱에 초기 데이터(initial data)를 제공
+### 1. Fixtures
+- Django가 데이터베이스로 가져오는 방법을 알고 있는 데이터 모음
+    - 데이터베이스 구조에 맞추어 작성 되어있음
+### 2. 초기 데이터 제공
+- Fixtures의 사용 목적
+### 3. 초기 데이터의 필요성
+- 협업 하는 유저 A, B가 있다고 생각해 보기
+    1. A가 먼저 프로젝트를 작업 후 github에 push
+        - .gitignore 로 인해 DB는 업로드하지 않기 때문에 A가 생성한 데이터도 업로드X
+    2. B가 github에서 A가 push한 프로젝트를 pull(혹은 clone)
+        - 결과적으로 B는 DB가 없는 프로젝트를 받게 됨
+- 이처럼 Django 프로젝트의 앱을 처음 설정할 때 동일하게 준비 된 데이터로 데이터베이스를 미리 채우는 것이 필요한 순간이 있음
+- fixtures를 사용해 앱에 초기 데이터(initial data)를 제공
 ---
-### Fixtuers 활용
-1. 사전 준비
-    - M:N 까지 모두 작성된 Django 프로젝트에서 유저, 게시글, 댓글 등 각 데이터를 최소 2~3개 이상 생성해두기
-2. fixtures 관련 명령어
-    1. `dumpdata` - 생성 (데이터 추출)
-    2. `loaddata` - 로드 (데이터 입력)
-3. `dumpdata`
-    - 데이터베이스의 모든 데이터를 추출
-    - 추출한 데이터는 json 형식으로 저장
-    - 작성 예시
-        ```shell
-        $ python manage.py dumpdata [app_name[.ModelName][app_name[.ModelName]..]] > filename.json
-        ```
-4. `dumpdata 활용`
+## Fixtuers 활용
+### 1. 사전 준비
+- M:N 까지 모두 작성된 Django 프로젝트에서 유저, 게시글, 댓글 등 각 데이터를 최소 2~3개 이상 생성해두기
+### 2. fixtures 관련 명령어
+1. `dumpdata` - 생성 (데이터 추출)
+2. `loaddata` - 로드 (데이터 입력)
+### 3. `dumpdata`
+- 데이터베이스의 모든 데이터를 추출
+- 추출한 데이터는 json 형식으로 저장
+- 작성 예시
     ```shell
-    $ python manage.py dumpdata --indent 4 articles.article > articles.json
+    $ python manage.py dumpdata [app_name[.ModelName][app_name[.ModelName]..]] > filename.json
     ```
+### 4. `dumpdata 활용`
+```shell
+$ python manage.py dumpdata --indent 4 articles.article > articles.json
+```
+```shell
+$ python manage.py dumpdata --indent 4 accounts.user > users.json
+$ python manage.py dumpdata --indent 4 articles.comment > comments.json
+```
+### 5. `loaddata`
+- Fixtures 데이터를 데이터베이스로 불러오기
+### 6. Fixtures 파일 기본 경로
+- `app_name/fixtures`
+- Django는 설치된 모든 app의 디렉토리에서 fixtures 폴더 이후의 경로로 fixtures 파일을 찾아 load
+### 7. `loaddata` 활용
+1. db.sqlite3 파일 삭제 후 migrate 진행
+    ```python
+    # 해당 위치로 fixture 파일 이동
+    articles/
+        fixture/
+            articles.json
+            users.json
+            comments.json
+    ```
+2. load 후 데이터가 잘 입력되었는지 확인
     ```shell
-    $ python manage.py dumpdata --indent 4 accounts.user > users.json
-    $ python manage.py dumpdata --indent 4 articles.comment > comments.json
+    $ python manage.pt loaddata articles.json users.json comments.json
     ```
-5. `loaddata`
-    - Fixtures 데이터를 데이터베이스로 불러오기
-6. Fixtures 파일 기본 경로
-    - `app_name/fixtures`
-    - Django는 설치된 모든 app의 디렉토리에서 fixtures 폴더 이후의 경로로 fixtures 파일을 찾아 load
-7. `loaddata` 활용
-    1. db.sqlite3 파일 삭제 후 migrate 진행
-        ```python
-        # 해당 위치로 fixture 파일 이동
-        articles/
-            fixture/
-                articles.json
-                users.json
-                comments.json
-        ```
-    2. load 후 데이터가 잘 입력되었는지 확인
-        ```shell
-        $ python manage.pt loaddata articles.json users.json comments.json
-        ```
 8. `loaddata` 순서 주의사항
     1. 만약 `loaddata`를 한번에 실행하지 않고 하나씩 실행한다면 모델 관계에 따라 load 하는 순서가 중요할 수 있음
         - comment는 article에 대한 key 및 user에 대한 key가 필요
@@ -241,7 +244,8 @@
     $ python manage.pt loaddata comments.json
     ```
 ---
-## 참고
+# 참고
+---
 1. 모든 모델을 한번에 dump 하기
     ```shell
     $ python manage.py dumpdata --indent 4 articles.article articles.comment accounts.user > data.json
@@ -264,8 +268,10 @@
     ### Fixtures 파일을 직접 만들지 말 것
     - 반드시 dumpdata 명령어를 사용하여 생성
 ---
-## 쿼리 개선
-### 사전 준비
+# 3. 쿼리 개선
+---
+## 사전 준비
+### 1. 사전 준비
 1. Improve query
     - 같은 결과를 얻기 위해 DB 측에 보내는 쿼리 개수를 점차 줄여 조회하기
 2. 사전 준비
@@ -280,8 +286,97 @@
     ```
 3. 서버 확인
 ---
-### `annotate`
-### `select_related`
-### `prefetch_related`
-### `select_related_prefetch_related`
+## `annotate`
+### 1. `annotate`
+- SQL의 `GROUP BY` 쿼리를 사용
+### 2. 문제상황
+- 각 게시글 마다 댓글 개수를 반복 평가
+```html
+<p>댓글 개수 : {{article.comment_set.count}}</p>
+```
+### 3. `annotate` 적용
+- 게시글을 조회하면서 댓글 개수까지 한번에 조회해서 가져오기
+```python
+def index_1(request):
+    articles = Articles.objects.annotate(Count('comment')).order_by('-pk')
+    context = {
+        'articles': articles,
+    }
+    return render(request, 'articles/index1.html', context)
+```
 ---
+## `select_related`
+### 1. `select_related`
+- SQL의 `INNER JOIN` 쿼리를 활용
+- 1:1 또는 N:1 참조 관계에서 사용
+### 2. 문제상황
+- 각 게시글마다 작성한 유저명까지 반복 평가
+```html
+{% for article in articles %}
+  <h3>작성자 : {{article.user.username}}</h3>
+  <p>제목 : {{article.title}}</p>
+  <hr>
+{% endfor %}
+```
+### 3. `select_related` 적용
+- 게시글을 조회하면서 유저 정보까지 한번에 조회해서 가져오기
+```python
+def index_2(request):
+    articles = Article.objects.select_related('user').order_by('-pk')
+    context = {
+        'articles': articles,
+    }
+    return render(request, 'articles/index_2.html', context)
+```
+
+---
+## `prefetch_related`
+### 1. `prefetch_related`
+- M:N 또는 N:1 역참조 관계에서 사용
+- SQL이 아닌 Python을 사용한 `JOIN`을 진행
+### 2. 문제상황
+- 각 게시글 출력 후 각 게시글의 댓글 목록까지 개별적으로 모두 평가
+```html
+{% for article in articles %}
+  <p>제목 : {{article.title}}</p>
+  <p>댓글 목록</p>
+  {% for comment in article.comment_set.all %}
+    <p>{{comment.content}}</p>
+  {% endfor %}
+  <hr>
+{% endfor %}
+```
+### 3. `prefetch_related` 적용
+- 게시글을 조회하면서 참조된 댓글까지 한번에 조회해서 가져오기
+```python
+def index_3(request):
+    articles = Articles.objects.prefetch_related('comment_set').order_by('-pk')
+    context = {
+        'articles': articles,
+    }
+    return render(request, 'articles/index_3.html', context)
+```
+---
+## `select_related1` & `prefetch_related`
+### 1. 문제상황
+- 게시글 + 각 게시글의 댓글 목록 + 댓글의 작성자를 단계적으로 평가
+### 2. `prefetch_related`
+- 게시글을 조회하면서 참조된 댓글까지 한번에 조회
+```python
+def index_4(request):
+    articles = Articles.objects.prefetch_related('comment_set').order_by
+```
+### 3.`select_related1` & `prefetch_related`
+- 게시글 + 각 게시글의 댓를 목록 + 댓글의 작성자를 한번에 조회
+```python
+def index_4(request):
+    articles = Articles.objects.prefetch_related(
+        Prefetch('comment_set', queryset = Comment.objects.select_related('user'))
+    ).order_by('-pk')
+```
+---
+# 참고
+---
+### 1. 섣부른 최적화는 악의 근원
+- "작은 효율성(small efficiency)에 대해서는, 말하자면 97% 정도에 대해서는, 잊어버려라.
+- 섣부른 최적화(premature optimization)는 모든 악의 근원이다." 
