@@ -1,15 +1,16 @@
 # Many to many relationships 1
-## INDEX
+---
+# INDEX
 #### 1. Many to many relation ships
 #### 2. Django Many to Many Field
 #### 3. 좋아요
 ---
 # 1. Many to many relation ships
-## Many to many realtion (N:M or M:N)
+---
+### 1. Many to many realtion (N:M or M:N)
 - 한 테이블의 0개 이상의 레코드가 다른 테이블의 0개 이상의 레코드와 관련된 경우
 - 양쪽 모두에서 N:1 관계를 가짐
----
-## M:N 관계의 역할과 필요성 이해하기
+### 2. M:N 관계의 역할과 필요성 이해하기
 - '병원 지료 시스템 모델 관계'를 만들며 M:N 관계의 역할과 필요성 이해하기
 - 환자와 의사 2개의 모델을 사용하여 모델 구조 구상하기
 - 제공된 '99-mtm-practice' 프로젝트를 기반으로 진행
@@ -45,7 +46,7 @@
     patient1 = Patient.objects.create(name='carol',doctor=doctor1)
     patient2 = Patient.objects.create(name='duke', doctor=doctor2)
     ```
-### N:1의 한계 상황
+### 3. N:1의 한계 상황
 1. 1번 환자가 두 의사 모두에게 진료를 받고자 한다면 환자 테이블에 1번 환자 데이터가 중복으로 입력될 수 밖에 없음
 2. 동시에 예약을 남길 수는 없을까?
 3. 동일한 환자지만 다른 의사에게도 진료 받기 위해 예약하기 위해서는 객체를 하나 더 만들어 진행해야 함
@@ -124,7 +125,7 @@
     ### Django에서는 'ManyToManyField'로 중개모델을 자동으로 생성
 ---
 ## ManyToManyField
-### Django Many to Many Field
+### 1. Django Many to Many Field
 1. 환자 모델에 ManyToManyField 작성
     ```python
     # hospitals/models.py
@@ -215,7 +216,7 @@
 ### "만약 예약 정보에 증상, 예약일 등 추가 정보가 포함되어야 한다면?"
 ---
 ## 'through' argument
-### 'through' argument
+### 1. 'through' argument
 - 중개 테이블에 '추가 데이터'를 사용해 M:N 관계를 형성하려는 경우에 사용
 1. through 설정 및 Reservation Class 수정
     - 이제는 예약 정보에 "증상"과 "예약일"이라는 추가 데이터가 생김
@@ -299,8 +300,7 @@
     doctor1.patient_set.all()
     <QuerySet []>
     ```
----
-### M:N 관계 주요 사항
+### 2. M:N 관계 주요 사항
 - M:N 관계로 맺어진 두 테이블에는 물리적인 변화가 없음
 - ManyToManyField는 중개 테이블을 자동으로 생성
 - ManyToManyField는 M:N 관계를 맺는 두 모델 어디에 위치해도 상관 없음
@@ -308,15 +308,16 @@
 - N:1은 완전한 종속의 관계였지만 M:N은 종속적인 관계가 아니며 '의사에게 진찰받는 환자 & 환자를 진찰하는 의사' 이렇게 2가지의 형태 모두 표현 가능
 ---
 # 2. Django Many to Many Field
-### `ManyToManyField(to, **options)`
-- Many to many 관계 설정 시 사용하는 모델 필드
 ---
-### ManyToManyField's Arguments
+### 1. `ManyToManyField(to, **options)`
+- Many to many 관계 설정 시 사용하는 모델 필드
+
+### 2. ManyToManyField's Arguments
 1. `related_name`
 2. `symmetrical`
 3. `through`
 ---
-### `related_name` arguments
+### 3. `related_name` arguments
 - 역참조시 사용하는 manager name을 변경
     ```python
     class Patient(models.Model):
@@ -337,7 +338,7 @@
     <QuerySet []>
     ```
 ---
-### `symmetrical` arguments
+### 4. `symmetrical` arguments
 1. ManyToManyField가 동일한 모델을 가리키는 정의에서만 사용
     - 기본 값 : True
         ```python
@@ -354,14 +355,15 @@
 3. False일 경우
     - True 였을 때와 반대 (대칭되지 않음)
 ---
-### M:N에서의 methods
+### 5. M:N에서의 methods
 1. `add()`
     - "지정된 객체를 관련 객체 집합에 추가"
     - (이미 존재하는 관계에 사용하면 관계가 복제되지 않음)
 2. `remove()`
     - "관련 객체 집합에서 지정된 모델 객체를 제거"
 ---
-# 좋아요
+# 3. 좋아요
+---
 ## 모델 관계 설정
 ### 1. Many to many relationships (N:M or M:N)
 - 한 테이블의 0개 이상의 레코드가 다른 테이블의 0개 이상의 레코드와 관려된 경우
@@ -387,7 +389,7 @@
     ```
 2. `Migration` 진행 후 에러 발생
     
-3. `user.article_set` 역참조 매니저 충돌
+    ### `user.article_set` 역참조 매니저 충돌
     - N:1
         - "유저가 작성한 게시글"
     - M:N
@@ -395,7 +397,7 @@
     - `like_users` 필드 생성 시 자동으로 역참조 `.article_set` 매니저가 생성됨
     - 그러나 이전 N:1(Article-User) 관계에서 이미 같은 이름의 매니저를 사용중
         - `user.article_set.all()` -> 해당 유저가 작성한 모든 게시글 조회
-    - 'user가 작성한 글 (`user.article_set`)'과 'user가 좋아요를 누른 글(`user.article_set`)'을 구분할 수 없게 됨
+    - 'user가 작성한 글 (`user.article_set`)'과 'user가 좋아요를 누른 글(`user.article_set`)'을 구분할수 없게됨
         - user와 관계된 `ForeignKey` 혹은 `ManyToManyField` 둘 중 하나에 `related_name` 작성 필요
 
 4. `related_name` 작성 후 `Migration` 재진행
@@ -461,5 +463,4 @@ def likes(request, article_pk):
 ### 4. 좋아요 버튼 출력 확인
 
 ### 5. 좋아요 버튼 클릭 후 테이블 확인
-
 ---
