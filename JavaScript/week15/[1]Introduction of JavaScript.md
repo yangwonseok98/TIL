@@ -252,3 +252,82 @@ console.log(aTag.getAttribute('href'))
   - ```html
     <p> lorem </p>
     ```
+### 2. HTML 콘텐츠 조작 실습
+```javascript
+const h1Tag = document.querySelector('.heading')
+console.log(h1Tag.textContent)
+
+h1Tag.textContent = '내용 수정'
+console.log(h1Tag.textContent)
+```
+---
+## DOM 요소 조작
+### 1. DOM 요소 조작 메서드
+1. `document.createElement(tagName)`
+  - 작성한 tagName의 HTML 요소를 생성하여 반환
+2. `Node.appendChild()`
+  - 한 Node를 특정 부모 Node의 자식 NodeList중 마지막 자식으로 삽입
+  - 추가된 Node 객체를 반환
+3. `Node.removeChild()`
+  - DOM에서 자식 Node를 제거
+  - 제거된 Node를 반환
+### 2. DOM 요소 조작 실습
+```javascript
+// 생성
+const h1Tag = document.createElement('h1')
+h1Tag.textContent = '제목'
+console.log(h1Tag)
+
+// 추가
+const divTag = document.querySelector('div')
+divTag.appendChild(h1Tag)
+console.log(divTag)
+
+// 삭제
+divTag.removeChild(h1Tag)
+```
+---
+## style 조작
+### 1. `style` property
+- 해당 요소의 모든 style 속성 목록을 포함하는 속성
+### 2. `style` 조작 실습
+```javascript
+const pTag = document.querySelector('p')
+
+pTag.style.color = 'crimson'
+pTag.style.fontsize = '2rem'
+pTag.style.border = '1px solid black'
+console.log(pTag.style)
+```
+---
+# 참고
+### 1. Node
+- DOM의 기본 구성 단위
+- DOM 트리의 각 부분은 Node라는 객체로 표현됨
+  - Document Node -> HTML 문서 전체를 나타내는 노드
+  - Element Node -> HTML 요소를 나타내는 노드 ex) <p>
+  - Text Node -> HTML 텍스트, Element Node 내의 텍스트 컨텐츠를 나타냄
+  - Attribute Node -> HTML 요소의 속성을 나타내는 노드
+
+### 2. NodeList
+- DOM 메서드를 사용해 선택한 Node의 목록
+- 배열과 유사한 구조를 가짐
+- Index로만 각 항목에 접근 가능
+- 다양한 배열 메서드 사용 가능
+- `querySelectorAll()`에 의해 반환되는 `NodeList`는 DOM의 변경사항을 실시간으로 반영하지 않음
+
+### 3. Element
+- Node의 하위 유형
+- Element는 DOM 트리에서 HTML 요소를 나타내는 특별한 유형의 Node
+- 예를 들어, `<p>, <div>, <span>, <body>`등의 HTML 태그들이 Element 노드를 생성
+- Node의 속성과 메서드를 모두 가지고 있으며 추가적인 요소 특화된 기능
+(예: className, innerHTML, id등)을 가지고 있음
+- 모든 Element는 Node이지만, 모든 Node가 Element인 것은 아님
+
+### 4. DOM 속성 확인 Tip
+- 개발자 도구 -> Elements -> Properties
+- 해당 요소의 모든 DOM 속성 확인 가능
+
+### 5. Parsing (구문 분석, 해석)
+- 브라우저가 문자열을 해석하여 DOM Tree로 만드는 과정
+---
