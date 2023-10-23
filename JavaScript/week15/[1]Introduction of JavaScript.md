@@ -146,10 +146,10 @@
     <li>list2</li>
   </ul>
   <script>
-    console.log(document.QuerySelector('.heading'))
-    console.log(document.QuerySelector('.content'))
-    console.log(document.QuerySelectorAll('.content'))
-    console.log(document.QuerySelectorAll('ul > li'))
+    console.log(document.querySelector('.heading'))
+    console.log(document.querySelector('.content'))
+    console.log(document.querySelectorAll('.content'))
+    console.log(document.querySelectorAll('ul > li'))
   </script>
 </body>
 ```
@@ -239,7 +239,7 @@ const aTag = document.querySelector('a')
 console.log(aTag.getAttribute('href'))
 
 aTag.setAttribute('href', 'https://www.naver.com/')
-console.log(aTag.getAttribute)
+console.log(aTag.getAttribute('href'))
 
 aTag.removeAttribute('href')
 console.log(aTag.getAttribute('href'))
