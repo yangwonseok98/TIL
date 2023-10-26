@@ -373,6 +373,9 @@ const addTodo = function (event) {
 </body>
 ```
 ```javascript
+//lodash CDN
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
 // 1. 필요한 요소 선택
 const h1Tag = document.querySelector('h1')
 const btnTag = document.querySelector('#btn')
