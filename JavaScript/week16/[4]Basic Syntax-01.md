@@ -145,7 +145,7 @@ v-on:submit.prevent="oneSubmit"
     <a :href="myUrl"></a>
     ```
 - Dynamic attribute name(동적 인자 이름)
-    - 대괄호로 감싸서 directive argumetn에 JavaScript 표현식을 사용할 수도 있음
+    - 대괄호로 감싸서 directive argument에 JavaScript 표현식을 사용할 수도 있음
     - JavaScript 표현식에 따라 동적으로 평가된 값이 최종 argument 값으로 사용됨
     ```html
     <button :[key]="myValue"></button>
