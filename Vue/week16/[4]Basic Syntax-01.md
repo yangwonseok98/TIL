@@ -239,7 +239,7 @@ app.mount('#app')
 2. 배열 구문 내에서 객체 구문 사용
 - 예시
     ```html
-    <div :class="[{aactive: isActive}, infoClass]">Text</div>
+    <div :class="[{active: isActive}, infoClass]">Text</div>
     ```
 
 ### 5. Binding Inline Style - Binding to Objects
