@@ -366,7 +366,7 @@ const warning = function(message, event){
 ```
 
 ### 7. Event Modifiers
-- Vue는 `v-on`에 대한 Event Modifiers를 제공해 `event.preventDefault()`와 같은 구문을 메서드에서 작성하기 않도록 함
+- Vue는 `v-on`에 대한 Event Modifiers를 제공해 `event.preventDefault()`와 같은 구문을 메서드에서 작성하지 않도록 함
 - `stop`, `prevent`, `self`등 다양한 modifiers를 제공
 - 메서드는 DOM 이벤트에 대한 처리보다는 데이터에 관한 논리를 작성하는 것에 집중할 것
 ```html
