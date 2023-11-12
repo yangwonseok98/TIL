@@ -439,7 +439,7 @@ const inputText2 = ref('')
     const checked = ref(false)
     ```
 2. 여러 체크박스와 배열 활용
-    - 해당 배열에는 현제 선택된 체크박스의 값이 포함됨
+    - 해당 배열에는 현재 선택된 체크박스의 값이 포함됨
     ```html
     <div>Checked name: {{ checkedNames }}</div>
 
