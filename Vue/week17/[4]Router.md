@@ -523,7 +523,7 @@ router.beforeEach((to, from) => {
     },    
     ```
 2. HomeView에서 UserView로 이동 후 각 인자 값 출력 확인하기
-    - `to`에는 이동할 URL인 user 라우트에 대한 정보가, `from`에는 현제 URL인 home 라우트에 대한 정보가 들어있음
+    - `to`에는 이동할 URL인 user 라우트에 대한 정보가, `from`에는 현재 URL인 home 라우트에 대한 정보가 들어있음
     - 다른 경로에서 user 라우트를 탐색 했을 때 실행된 것
 
 ### 4. `router.beforeEnter()` 활용
