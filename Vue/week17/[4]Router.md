@@ -491,7 +491,7 @@ router.beforeEach((to, from) => {
 ---
 ## Per-route Guard
 ### 1. `router.beforeEnter()`
-- route에 진입했을 때만 실해되는 함수
+- route에 진입했을 때만 실행되는 함수
 - 매개변수, 쿼리 값이 변경될 때는 실행되지 않고 다른 경로에서 탐색할 때만 실행됨
 
 ### 2. `router.beforeEnter()` 구조
