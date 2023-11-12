@@ -456,9 +456,9 @@ const inputText2 = ref('')
 ### 3. `Select` 활용
 - `select`에서 `v-model` 표현식의 초기 값이 어던 option과도 일치하지 않는 경우 `select` 요소는 `"선택되지 않은(unselected)"` 상태로 렌더링 됨
 ```html
-<div>Selected: </div>
+<div>Selected: {{ selected }}</div>
 
-<select>
+<select v-model="selected">
   <option disabled value="">Please select one</option>
   <option>Alice</option>
   <option>Bella</option>
