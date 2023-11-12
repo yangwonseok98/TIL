@@ -9,9 +9,9 @@
 ### 1. Front-end Development
 - 웹사이트와 웹 애플리케이션의 사용자 인터페이스(UI)와 사용자 경험(UX)을 만들고 디자인하는 것
 - HTML, CSS, JavaScript 등을 활용하여 사용자가 직접 상호작용하는 부분을 개발
-### 2. Cliendt-side frameworks
+### 2. Client-side frameworks
 - 클라이언트 측에서 UI와 상호작용을 개발하기 위해 사용되는 JavaScript 기반 프레임워크
-### 3. Cliendt-side frameworks가 필요한 이유
+### 3. Client-side frameworks가 필요한 이유
 1. "웹에서 하는 일이 많아졌다."
     - 단순히 무엇가를 읽는 곳 -> 무언가를 하는 곳
     - 사용자는 이제 웹에서 문서만을 읽는 것이 아닌 음악을 스트리밍 하고, 영화를 보고, 원거리에 있는 사람들과 텍스트 및 영상 채팅을 통해 즉시 통신하고 있음
