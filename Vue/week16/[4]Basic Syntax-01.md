@@ -375,7 +375,7 @@ const warning = function(message, event){
 ```html
 <form @click.stop.prevent="onLink">...</form>
 ```
-- Modifiers는 chained 되게끔 작성할 수 있으며 이때는 장서된 순서로 실행되기 때문에 작성 순서에 유의
+- Modifiers는 chained 되게끔 작성할 수 있으며 이때는 작성된 순서로 실행되기 때문에 작성 순서에 유의
 
 ### 8. Key Modifiers
 - Vue는 키보드 이벤트를 수신할 때 특정 키에 관한 별도 modifiers를 사용할 수 있음
