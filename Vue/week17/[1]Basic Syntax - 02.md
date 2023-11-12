@@ -68,7 +68,7 @@
 
 ### 3. `computed` 특징
 
-1. 반환되는 값을 `computed ref`이며 일반 `refs`와 유사하게 계산된 결과를 `.value`로 참조할 수 있음 (템플릿에서는 `.value` 생략가능)
+1. 반환되는 값은 `computed ref`이며 일반 `refs`와 유사하게 계산된 결과를 `.value`로 참조할 수 있음 (템플릿에서는 `.value` 생략가능)
 2. `computed` 속성은 의존된 반응형 데이터를 자동으로 추적
 3. 의존하는 데이터가 변경될 때만 재평가
    - restOfTodos의 계산은 todos에 의존하고 있음
