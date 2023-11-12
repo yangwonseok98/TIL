@@ -232,7 +232,7 @@
 
 ### 2. `v-for` 구조
 
-1. `v-for`는 alias in experssion 형식의 특수 구문을 사용하여 반복되는 현재 요소에 대한 별칭(alias)을 제공
+1. `v-for`는 alias in expression 형식의 특수 구문을 사용하여 반복되는 현재 요소에 대한 별칭(alias)을 제공
 
    ```html
    <div v-for="item in items">{{ item.text }}</div>
