@@ -199,7 +199,7 @@
 - 간단한 token 기반 HTTP 인증 체계
 - 기본 데스크톱 및 모바일 클라이언트와 같은 클라이언트-서버 절정에 적합
 - https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
-  ### 서버가 사용자에게 토큰을 발급하여 사용자는 매 요청마다 발급받은 토크을 요청과 함께 보내 인증 과정을 거침
+  ### 서버가 사용자에게 토큰을 발급하여 사용자는 매 요청마다 발급받은 토큰을 요청과 함께 보내 인증 과정을 거침
 
 ---
 
